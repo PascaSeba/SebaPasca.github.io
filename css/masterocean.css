@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+}
+
+.clearfix {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+}
+
+
+
+/* Contenitori */
+.ms-fluid-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.ms_container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.ms_mini_container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 100%;
+}
+/* [class*="col-"] {
+  background-color: magenta;
+  border: 1px solid black;
+} */
+/* Fine contenitori */
+
+
+/* Inizio header */
+.header_top {
+  width: 100%;
+  background-color: white;
+  height: 8vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.ms_container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.hamburger {
+  float: right;
+}
+.hamburger a {
+  color: black;
+  text-decoration: none;
+  line-height: 50px;
+}
+
+.header_top a {
+  color: black;
+  text-decoration: none;
+}
+
+.ms_signup_btn {
+  border: 1px solid blue;
+  color: blue;
+}
+.ms_signup_btn:hover {
+  background-color: aqua;
+}
+
+.down::after {
+  content: "\25BE";
+}
+
+.menu, .menu_2, .button, .logoclass {
+  line-height: 5.5vh;
+  padding-top: 10px;
+  vertical-align: middle;
+}
+
+.menu ul li, .menu_2 ul li {
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 1em;
+  font-size: 0.8em;
+}
+
+.menu_2 {
+  text-align: right;
+}
+
+.logoclass {
+  max-width: 30%;
+}
+
+#logo {
+  width: 180px;
+  vertical-align: middle;
+}
+
+/* Inizio banner */
+.jumbo_container {
+  background-image: url(../img/bg_jumbotron.svg);
+  height: 60vh;
+  background-position: bottom;
+  background-size: cover;
+  padding-bottom: 30px;
+  margin-top: 8vh;
+}
+.headertext {
+  padding-right: 5%;
+}
+.headertext_1, .headertext_2 {
+  color: white;
+}
+.headertext_1 {
+  margin-top: 16%;
+  font-size: 3em;
+}
+.headertext_2 {
+  font-size: 1.2em;
+}
+.bannerwhite {
+  background-color: white;
+  margin-top: 4.5%;
+  text-align: center;
+  min-width: 30%;
+  padding-bottom: 20px;
+}
+.blueh2 {
+  color: blue;
+}
+.email_btn, .google_btn {
+  width: 100%;
+}
+.google_btn {
+  background-color: white;
+  border: 1.5px solid black;
+  color: black;
+  position: relative;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.google_btn:hover {
+  background-color: lightgrey;
+  color: blue;
+}
+.google_btn img {
+  width: 5%;
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Fine banner */
+
+
+/* <!-- Inizio sezione loghi --> */
+
+.innovative {
+  background-color: #f3f5f9;
+  padding: 25px 0;
+}
+.innovative h3 {
+  padding-bottom: 10px;
+}
+.gitlab {
+  width: 90%;
+}
+.row_innovative {
+  line-height: 50px;
+}
+.imagelogo {
+  max-width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.imagelogo img {
+  max-width: calc(100% / 1);
+  vertical-align: middle;
+  height: 70px;
+  padding: 0 5px;
+}
+
+.stories {
+  text-align: center;
+  padding-top: 10px;
+}
+.stories a {
+  font-size: 1.2em;
+  text-decoration: none;
+}
+/*<!-- Fine sezione loghi --> */
+
+
+/* <!-- Inizio sezione deploy -->*/
+.deploy_body ul li {
+  list-style-type: none;
+  color: grey;
+  border-left: 1px solid grey;
+  padding-left: 5px;
+}
+
+.deployhead h1, .designedtext_1 {
+  font-size: 2.5em;
+}
+.deployhead p, .designedtext_2 {
+  font-size: 1.222em;
+}
+
+/*<!-- Fine sezione deploy --> */
+
+
+/* <!-- Inizio sezione "Designed for developers" -->*/
+.designed {
+  background-color: #f3f5f9;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+.designedimage img {
+  max-width: 35%;
+}
+.designedimage {
+  position: relative;
+}
+.dots {
+  padding-top: 10px;
+}
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: rgba(10, 52, 48, 0.93);
+}
+.nav-dot:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+.designedparagraph {
+  padding-top: 20px;
+}
+
+.frecciadestra {
+  position: absolute;
+  right: 31%;
+  top: 50%;
+  font-size: 2em;
+  transform: translateY(-50%);
+}
+.frecciasinistra {
+  position: absolute;
+  left: 31%;
+  top: 50%;
+  font-size: 2em;
+  transform: translateY(-50%);
+}
+/*<!-- Fine sezione "Designed for developers" --> */
+
+
+/* <!-- Inizio sezione "The features your business needs" -->*/
+.features {
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+.features h2 {
+  padding-bottom: 15px;
+}
+/*<!-- Fine sezione "The features your business needs" --> */
+
+
+/* <!-- Inizio sezione "Regions" --!> */
+.regions, .oceanteam, .account {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.regions, .account {
+  background: linear-gradient(0deg, rgba(0,43,166,1) 7%, rgba(23,79,205,1) 51%, rgba(32,40,187,1) 94%);
+  color: white;
+}
+.borderegions {
+  border-bottom: 1.5px solid grey;
+  padding: 5px 0;
+}
+.sep_regions {
+  padding-right: 50px;
+}
+.regionstext_1 {
+  display: inline-block;
+  color: white;
+  font-weight: inherit;
+}
+.regionstext_2 {
+  color: lightgrey;
+  font-weight: inherit;
+}
+.regionstext_3 {
+  color: lightgrey;
+}
+.regionstext_2, .regionstext_3 {
+  font-weight: normal;
+}
+.regions h2 {
+  padding-bottom: 15px;
+}
+/* <!-- Fine sezione "Regions" --!> */
+
+
+/* <!-- Inizio sezione "Development Team" --> */
+.oceanteam {
+  background-color: #f3f5f9;
+}
+.oceanteam_container {
+  width: 60%;
+  margin: 0 auto;
+}
+.rockerbox {
+  margin-top: 20px
+}
+.rockerboxcontainer {
+  background-color: white;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+  position: relative;
+}
+.rockerbox img {
+  max-width: 100%;
+}
+.author {
+  font-weight: 900;
+}
+.author, .developers {
+  display: block;
+}
+.developers {
+  padding-bottom: 15px;
+  font-weight: normal;
+}
+.rockerboxcontainer p {
+  padding-top: 20px;
+  color: grey;
+}
+.frecciarocker_right {
+  right: -5%;
+}
+.frecciarocker_left {
+  left: -5%;
+}
+/* <!-- Fine sezione "Development Team" --> */
+
+
+/* <!-- Inizio sezione "crea il tuo account" --> */
+.account {
+  text-align: center;
+}
+.ms_btn {
+  color: blue;
+  width: 150px;
+  padding: 10px 0;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.ms_btn:hover {
+  background-color: lightgrey;
+  color: black;
+}
+.ms_btn:active {
+  background-color: yellow;
+}
+/* <!-- Fine sezione "crea il tuo account" --> */
+
+
+/* <!-- Inizio sezione Footer --> */
+.wrapper_footer {
+  background-color: #031c4e;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+.footer_container {
+  margin: 0 auto;
+  width: 70%;
+  color: white;
+}
+.footertext_1 {
+  display: block;
+  font-weight: normal;
+  color: grey;
+  padding: 5px 0;
+}
+.footertext_1:nth-child(2) {
+  color: lightgrey;
+}
+.ms_font {
+  font-size: 1.5em;
+  padding: 0 1%;
+}
+.footer_1 a {
+  text-decoration: none;
+  color: grey;
+}
+.footer_1 a:hover {
+  color: lightgrey;
+}
+.wrapper_footer ul li {
+  color: lightgrey;
+  list-style-type: none;
+  font-weight: normal;
+  padding: 5px 0;
+}
+/* Fine footer */
+
+/* Squalotifica */
+.Sammy_shark {
+  position: fixed;
+  max-width: 70px;
+  z-index: 999;
+  bottom: 5%;
+  right: 2%;
+  background-color: skyblue;
+}
+
+.Sammy_shark img {
+  max-width: 100%;
+}
+
+.Sammy_shark p {
+  padding-top: 15px;
+  font-size: 1em;
+}
+
+.bubble {
+  position: fixed;
+  height: 50px;
+  padding: 0px;
+  background: #FFFFFF;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: #4BB3FF solid 3px;
+  bottom: 30px;
+  right: 150px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 10px 0 10px 28px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+margin-top: -10px;
+right: -28px;
+top: 67%;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 12px 0 12px 30px;
+border-color: transparent #4BB3FF;
+display: block;
+width: 0;
+z-index: 0;
+margin-top: -12px;
+right: -33px;
+top: 67%;
+}
+.notify {
+  position: fixed;
+  bottom: 70px;
+  right: 25px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.row { margin: 0px !important }
+/*Aggiunto perché altrimenti sbordava tutto il contenuto dal body */

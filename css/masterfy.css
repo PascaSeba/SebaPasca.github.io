@@ -1,0 +1,666 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141922;
+    overflow-y: scroll;
+    font-family: 'Signika', sans-serif;
+}
+
+.clearfix::before {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+    .main_nav {
+        width: 80px !important;
+    }
+    .logocontainer {
+        width: 125px !important;
+    }
+    .main_body {
+        padding-left: 100px !important;
+    }
+}
+
+
+/* Fine Media Query */
+
+
+/* Sezione contenitori */
+
+.ms_wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #141922;
+    position: relative;
+    min-width: 500px;
+}
+
+
+/* Fine sezione contenitori */
+
+
+/* Sezione nav laterale */
+
+.main_nav {
+    position: fixed;
+    left: 0;
+    width: 200px;
+    height: calc(100% - 90px);
+    background-color: #000000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav_top {
+    display: flex;
+    flex-direction: column;
+    min-height: 307px;
+    overflow: hidden;
+}
+
+.logocontainer {
+    width: 80%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logocontainer img:last-child {
+    width: 30%;
+    flex-direction: column;
+}
+
+.main_nav .nav_top ul a li {
+    list-style-type: none;
+    padding: 5px 0;
+    vertical-align: middle;
+    color: white;
+    text-decoration: none;
+}
+
+.main_nav .nav_top a {
+    text-decoration: none;
+}
+
+.imageside {
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: grey;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.menu a:first-child {
+    color: white;
+}
+
+.menu a:hover:not(:first-child) {
+    color: white;
+}
+
+.leftmain_padd {
+    padding: 10px 0;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 900;
+    color: grey;
+}
+
+.leftmain_padd:hover {
+    color: white;
+}
+
+.main_nav .nav_top .playlist_menu h3 {
+    padding-top: 10px;
+    color: white;
+    font-size: 1.7em;
+    font-weight: 900;
+}
+
+.plus {
+    font-size: 1.8em;
+    background-color: lightgray;
+    padding: 0px 2px;
+    padding-left: 9px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.leftmain_padd:hover .plus {
+    color: black;
+}
+
+.playlist_menu {
+    color: grey;
+}
+
+.play_list {
+    height: 100%;
+    overflow: hidden;
+}
+
+.play_list ul {
+    overflow-y: auto;
+    height: calc(100vh - 491px);
+}
+
+.play_list ul::-webkit-scrollbar {
+    width: 12px;
+    background-color: #0d4142;
+    border-radius: 15px;
+}
+
+.play_list ul::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 1.5px solid #76a3a2;
+}
+
+.play_list ul::-webkit-scrollbar-thumb:active,
+.play_list::-webkit-scrollbar-thumb:hover {
+    background-color: #141922;
+}
+
+.playlist_menu .play_list ul a li {
+    padding: 5px 0;
+    font-size: 1.1em;
+    color: grey;
+}
+
+.playlist_menu .play_list ul a li:hover {
+    color: white;
+}
+
+.nav_bottom {
+    color: grey;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+.nav_bottom span:first-child {
+    color: grey;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav_bottom span:first-child:hover {
+    color: white;
+}
+
+.border_infnav {
+    border-bottom: 1px solid grey;
+    padding: 3px 0;
+}
+
+.nav_bottom span:last-child {
+    color: white;
+    font-weight: 900;
+    padding-top: 7px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav_bottom span:last-child:hover {
+    color: grey;
+}
+
+.download {
+    width: 15px;
+}
+
+.profile {
+    width: 20px;
+    background-color: grey;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.download,
+.profile {
+    margin-right: 5px;
+}
+
+
+/* Fine sezione nav laterale */
+
+
+/* Sezione nav superiore */
+
+.main_content {
+    background-color: rgba(8, 11, 18, 0.6);
+    width: calc(100% - 200px);
+    position: fixed;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    z-index: 999;
+}
+
+.ms_button {
+    color: white;
+    background-color: black;
+    padding: 20px 20px;
+    border: 1.5px solid white;
+    border-radius: 15px;
+    line-height: 0px;
+    text-transform: uppercase;
+    display: flex;
+    align-self: center;
+    font-weight: 700;
+}
+
+.ms_button:hover {
+    background-color: #24494a;
+    padding: 25px 25px;
+    font-size: 1.1em;
+}
+
+.ms_button:active {
+    color: black;
+    background-color: #2ebb6b;
+}
+
+
+/* Fine sezione nav superiore */
+
+
+/* Inizio sezione corpo pagina */
+
+.main_body {
+    padding-left: 220px;
+    padding-right: 25px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: #141922;
+    width: 100%;
+}
+
+.list_body {
+    font-size: 0.9em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.list_nav ul li {
+    list-style-type: none;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    color: grey;
+}
+
+.list_nav .list_body a {
+    text-decoration: none;
+}
+
+.list_nav .list_body a li:hover {
+    color: white;
+}
+
+.greenbar::after {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 3px;
+}
+
+.greenbar::after {
+    content: "";
+    width: 40%;
+    height: 2.3px;
+    background-color: #1db954;
+}
+
+.music_wrapper h1,
+.create h2,
+.populars h2 {
+    color: white;
+    font-size: 3em;
+}
+
+.music_wrapper {
+    width: 100%;
+    background-color: #141922;
+}
+
+.image {
+    min-width: 100%;
+    padding: 8px 8px;
+    color: white;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+}
+
+.overtext h3 {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: white;
+}
+
+.overtext p {
+    font-size: 1.2em;
+    color: grey;
+}
+
+.overtext {
+    text-align: center;
+}
+
+.create,
+.populars {
+    width: 100%;
+    color: white;
+    padding-top: 20px;
+    background-color: #141922;
+}
+
+.image_create,
+.populars .image {
+    min-width: 10%;
+    float: left;
+    margin: 0 10px;
+    position: relative;
+}
+
+.create .image_create img,
+.populars .image_create img {
+    min-width: 80%;
+}
+
+.populars img {
+    border-radius: 50%;
+}
+
+.einaudi {
+    width: 94%;
+    margin-top: 1px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(8, 11, 18, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_2 {
+    height: 86%;
+}
+
+.overlay a i {
+    font-size: 4em;
+    color: white;
+}
+
+.image:hover .overlay,
+.image_create:hover .overlay {
+    opacity: 1;
+}
+
+.overlay_circle {
+    border-radius: 50%;
+}
+
+
+/* Fine sezione corpo pagina */
+
+
+/* Sezione del footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    background-color: #282828;
+    width: 100%;
+}
+
+.footcontainer {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.song {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    height: 100%;
+    color: white;
+    float: left;
+}
+
+.songimage {
+    padding-right: 10px;
+}
+
+.songimage img {
+    width: 50px;
+    height: 50px;
+}
+
+.songtext h4 {
+    font-size: 0.95em;
+}
+
+.songtext h4:last-child {
+    font-size: 0.85em;
+}
+
+.songtext {
+    padding-right: 50px;
+}
+
+.songsymbols a,
+.songtext h4:last-child {
+    color: grey;
+}
+
+.songsymbols a:hover {
+    color: white;
+}
+
+.ms_heart {
+    padding-right: 13px;
+}
+
+.ms_heart,
+.ms_folder {
+    font-size: 1.3em;
+}
+
+.player {
+    float: left;
+    min-width: 50%;
+    justify-content: center;
+    align-self: center;
+    margin-left: 50px;
+}
+
+.playcommands {
+    color: white;
+}
+
+.commands {
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.commands a {
+    color: white;
+}
+
+.commands .bighover:hover {
+    font-size: 3em;
+}
+
+.ms_play {
+    font-size: 30px;
+}
+
+.musicbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.musicbar span {
+    color: white;
+    padding-right: 10px;
+    font-size: 0.9em;
+}
+
+.musicbar span:last-child {
+    padding-right: 0;
+    padding-left: 10px;
+    display: flex;
+}
+
+.musicbar a {
+    width: 20%;
+    background-color: #1db954;
+    height: 4px;
+    display: inline-flex;
+    position: relative;
+}
+
+.bar_white {
+    width: 40%;
+    background-color: white;
+    height: 4px;
+    display: inline-flex;
+}
+
+.pointer {
+    position: absolute;
+    background-color: white;
+    width: 13.5px;
+    height: 13.5px;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
+}
+
+.musicbar a:hover {
+    background-color: yellowgreen;
+}
+
+.musicbar a:hover .pointer {
+    visibility: visible;
+}
+
+.sound {
+    width: 25%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icons_right_foot i {
+    padding: 0 8px;
+    color: grey;
+    font-size: 1.3em;
+}
+
+.icons_right_foot a i:hover {
+    color: white;
+}
+
+.volume_barcontainer {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume_barcontainer i {
+    padding: 0 10px;
+}
+
+.volume_bar {
+    width: 20%;
+    background-color: #1db954;
+    height: 4px;
+    display: inline-flex;
+    position: relative;
+}
+
+.secondvolume_bar {
+    width: 10%;
+    background-color: white;
+    height: 4px;
+    display: inline-flex;
+}
+
+.volume_bar .pointer {
+    right: 0;
+}
+
+.volume_bar:hover {
+    background-color: yellowgreen;
+}
+
+.volume_bar:hover .pointer {
+    visibility: visible;
+}
+
+
+/* Fine sezione del footer */

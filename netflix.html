@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/masterflix.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <title>Boolflix (my Netflix)</title>
+</head>
+
+<body>
+    <div id="root">
+        <!-- INIZIO DELL'HEADER -->
+        <header>
+            <div class="my_header">
+                <img src="img/boolflix.png" alt="logo" id="logo">
+                <!-- MENU DI NAVIGAZIONE -->
+                <div class="my_nav">
+                    <ul>
+                        <li>Home</li>
+                        <li>Serie TV</li>
+                        <li>Film</li>
+                        <li>Nuovi e popolari</li>
+                        <li>La mia lista</li>
+                    </ul>
+                </div>
+                <!-- CASELLA DI RICERCA DI FILM E SERIE TV -->
+                <div class="searchbar">
+                    <i class="fas fa-search" @click="search"></i><input type="text" v-model="querySearch" @keyup.13="search" placeholder="Cerca un film o una serie...">
+                </div>
+                <div class="second_nav">
+                    <ul>
+                        <li>BAMBINI</li>
+                        <li><i class="fas fa-gift"></i></li>
+                        <li><i class="fas fa-bell"></i></li>
+                        <img src="img/baby_yoda.png" alt=""><i class="fas fa-sort-down"></i>
+                        <li><i class="fas fa-sliders-h"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- INIZIO DEL CORPO DELLA PAGINA -->
+        <main>
+            <div class="my_main">
+                <div class="welcome" v-if="(researched.length == 0)">
+                    <!-- come fare a inserire nel v-if qui sopra: || (querySearch.length == 0) ovvero che non mi fai vedere nulla (correttamente) se la searchbar è vuota (senza dover premere invio?)?-->
+                    <h1 class="attention" v-if="(researched.length == 0)"><span>ATTENZIONE</span>! <br> Per visualizzare TUTTE le informazioni relative al film cercato, passare il mouse sul film scelto.</h1>
+                    <h2>Benvenuto su <i>Boolflix!</i> <br> Vedi la <i>barra di ricerca</i> in alto? <br> Bene: ora cerca un <i>film</i> o una <i>serie TV</i> che desideri guardare. <br> <span>&#128516;BUONA VISIONE!&#128516;</span></h2>
+                </div>
+                <div v-else tabindex="1" id="movie_container" v-for="found in researched">
+                    <!-- LISTA FILM E SERIE TV +... -->
+                    <div class="image_container">
+                        <img class="null" v-if="found.backdrop_path == null" src="https://image.freepik.com/free-vector/set-cute-robot-ai-character-error-crash-action_99413-154.jpg" alt="">
+                        <img class="found_image" v-else :src="imgFoundSrc + imgFoundSize + found.backdrop_path" alt="">
+                        <div class="principal_info">
+                            <h4 v-if="found.original_title">Tipo: Film</h4>
+                            <h4 v-else>Tipo: Serie TV</h4>
+                            <h2><span class="booltitle ourTitle">Titolo:</span> {{found.title||found.name}}</h2>
+                        </div>
+                        <div class="onHover">
+                            <h3><span class="booltitle">Titolo originale:</span><br> {{found.original_title||found.original_name}}</h3>
+                            <!-- ...LISTA DELLE LINGUE DEI FILM E DELLE SERIE TV -->
+                            <p v-if="found.overview.length == 0"><strong>Trama:</strong><br> <u>Siamo spiacenti, questa trama non è disponibile</u>.</p>
+                            <p v-else class="trama"><strong class="booltitle">Trama:</strong><br> {{found.overview}}</p>
+                            <p class="your_language"><span class="booltitle">Lingua disponibile:</span> <img src="https://www.countryflags.io/it/shiny/64.png" alt=""></p>
+                            <p class="original_language"><span class="booltitle">Lingua originale:</span> <img v-if="found.original_language=='en'" src="https://www.countryflags.io/gb/shiny/64.png" alt="found.original_language" class="lang_flag"><img v-else-if="found.original_language=='ja'"
+                                    src="img/jap_flag.png" alt=""><img id="danish_flag" v-else-if="found.original_language=='da'" src="img/danish.png" alt=""><img id="danish_flag" v-else-if="found.original_language=='ko'" src="img/korean.png" alt="">
+                                <img v-else-if="found.original_language=='cs'" src="img/ceca.png"><img v-else :src="'https://www.countryflags.io/'+found.original_language+'/shiny/64.png'" :alt="found.original_language" class="lang_flag"></p>
+                            <p><span class="booltitle">Voto:</span> <i v-for="star in stellarVote(found.vote_average)" class="fas fa-star"></i><i v-for="star in (stellarNumber - stellarVote(found.vote_average))" class="far fa-star"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/mainetflix.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    background-image: url('../img/pacman.png');
+    background-position: center;
+    height: 110vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: rgb(31, 85, 85);
+    line-height: 22px;
+    background-attachment: fixed;
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    overflow-x: hidden;
+}
+
+
+/* Sezione dell' HEADER */
+
+header {
+    margin-bottom: 90px;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    border-bottom: 7px dotted yellow;
+    background-color: rgba(74, 75, 75, 0.445);
+    padding-top: 3px;
+}
+
+.pacman {
+    position: absolute;
+    width: 5%;
+    right: 13%;
+    top: 6.8%;
+    z-index: 1;
+}
+
+.header_ghost {
+    right: -2%;
+    width: 5.15%;
+}
+
+.hide_points {
+    position: absolute;
+    right: 0.5%;
+    top: 7%;
+    width: 199px;
+    height: 7vh;
+    background-color: #212121;
+}
+
+.second_point {
+    background-color: black;
+    top: 16.7%;
+}
+
+#title {
+    font-size: 2.5em;
+    text-align: center;
+    text-shadow: 13px 9px 10px rgb(64, 65, 45);
+    margin-top: 30px;
+    margin-bottom: 25px;
+    color: #544aa4;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    margin-top: 12px;
+}
+
+nav ul li {
+    list-style-type: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0.589);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #e4e430;
+}
+
+nav ul li a {
+    color: #e4e430;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background-color: #e4e430;
+    border: 2px solid red;
+}
+
+nav ul li:hover a {
+    color: red;
+}
+
+#presentazione {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    position: relative;
+}
+
+.info {
+    width: 40%;
+    align-self: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+    border-right: 5px solid rgb(162, 167, 167);
+}
+
+#presentazione .arrow {
+    font-size: 3.5em;
+    position: absolute;
+    bottom: 15%;
+    left: 36.9%;
+    color: whitesmoke;
+}
+
+.info h2 {
+    text-shadow: 1.8px 0px 3px white;
+    font-size: 1.4em;
+    text-align: center;
+    color: rgb(228, 228, 48);
+}
+
+.info p {
+    margin-top: 13px;
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: 500;
+    line-height: 18px;
+    color: rgb(62, 78, 61);
+}
+
+#presentazione img {
+    width: 14%;
+    height: 20%;
+    border-radius: 20%;
+    border: 7px solid white;
+    margin-right: 46.5px;
+}
+
+
+/* Fine della sezione dell' HEADER */
+
+
+/* Sezione del MAIN */
+
+#main_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    position: relative;
+}
+
+.projects_ghost {
+    position: absolute;
+    width: 5%;
+    left: 27%;
+    z-index: 2;
+    top: 78%;
+}
+
+.my_container {
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_titles {
+    color: #e4e430;
+    width: 100%;
+    height: fit-content;
+    padding: 25px;
+    background-color: #211c46b2;
+    border-radius: 20px;
+}
+
+.projects_title {
+    font-size: 2.1em;
+    margin-bottom: 20px;
+}
+
+.main_titles p {
+    font-size: 1em;
+    color: white;
+}
+
+
+/* parte dello slider */
+
+.container {
+    height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.slider_ghost {
+    position: absolute;
+    width: 14%;
+    right: -8%;
+    top: 34%;
+    z-index: 3;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.images_container {
+    margin: auto;
+    height: 90%;
+    width: 80%;
+    margin-top: 35px;
+    box-shadow: 13px 10px 50px 10px rgba(128, 128, 128, 0.39);
+    border-radius: 30px;
+}
+
+.wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border-left: 10px solid #544aa4;
+    border-right: 10px solid yellow;
+}
+
+.active {
+    display: inline-block;
+    color: yellow;
+}
+
+.slider i:hover {
+    font-size: 2em;
+}
+
+.slide_prev i,
+.slide_next i {
+    font-size: 3.7em;
+}
+
+.slide_prev i:hover,
+.slide_next i:hover {
+    transform: scale(1.2);
+}
+
+.slide_prev,
+.slide_next {
+    position: absolute;
+    bottom: 40%;
+    transform: translateY(-40%);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.slide_prev i:hover {
+    color: #544aa4;
+}
+
+.slide_next i:hover {
+    color: yellow!important;
+}
+
+.slide_prev {
+    right: 92%;
+    color: yellow;
+}
+
+.slide_next {
+    left: 92%;
+}
+
+.slider {
+    background-color: #544aa4;
+    position: absolute;
+    display: flex;
+    height: 10%;
+    bottom: -9%;
+    width: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+    color: rgb(77, 77, 77);
+}
+
+.slider i {
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.arright {
+    color: #544aa4;
+}
+
+.links {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.links a {
+    color: #e4e430;
+    font-style: italic;
+    font-size: 1.15em;
+    font-family: 'Changa', sans-serif;
+    margin-right: 15px;
+}
+
+.links {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.links a:hover {
+    color: red;
+}
+
+.main_titles {
+    text-align: center;
+}
+
+
+/* fine parte dello slider */
+
+
+/* Fine parte del MAIN */
+
+
+/* Inizio parte del FOOTER*/
+
+footer {
+    margin-top: 620px;
+    color: white;
+    padding-bottom: 25px;
+    background-color: rgba(74, 75, 75, 0.445);
+    padding-top: 30px;
+    border-top: 4px solid yellow;
+}
+
+.contacts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer h1 {
+    margin-bottom: 30px;
+    color: #e4e430;
+    text-align: center;
+}
+
+.contacts p {
+    font-size: 1.2em;
+    font-family: 'Changa', sans-serif;
+}
+
+.contacts i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    vertical-align: middle;
+}
